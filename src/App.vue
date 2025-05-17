@@ -9,7 +9,7 @@ onMounted(() => loadMarkdownFile());
 
 async function loadMarkdownFile() {
   try {
-    const response = await fetch("/assets/cmscontent/index.md");
+    const response = await fetch("/src/assets/cmscontent/index.md");
     if (response.ok) {
       const markdownText = await response.text();
       hasValidTextContent.value = !markdownText.toLowerCase().includes("!doctype");
