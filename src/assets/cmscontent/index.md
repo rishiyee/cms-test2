@@ -1,13 +1,11 @@
 ---
 title: Introduction to Markdown
 ---
-# Introducti
-
-Markdown is a lightweight markup language used to format plain text. It is commonly used for writing documentation, README files, and creating content for static site generators. The syntax is easy to learn and readable even in its raw form.
+# Inanguage used to format plain text. It is commonly used for writing documentation, README files, and creating content for static site generators. The syntax is easy to learn and readable even in its raw form.
 
 # Benefits of Markdown
 
-One of the major benefits of using Markdown is its simplicity. Unlike complex word processors, Markdown allows users to focus on the content without worrying about formatting distractions. It also integrates well with version control systems like Git.
+One of t**he major benefits of using Markdown is its simplicity. Unlike complex word processors, Markdown allows users to focus on the conte**nt without worrying about formatting distractions. It also integrates well with version control systems like Git.
 
 # Common Uses
 
