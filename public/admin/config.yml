@@ -14,5 +14,3 @@ collections:
         name: "index"
         fields:
           - { label: "Body", name: "body", widget: "markdown" }
-
-
