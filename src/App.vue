@@ -1,28 +1,35 @@
 <script setup>
 import { marked } from "marked";
 import { onMounted, ref } from "vue";
-const markdownHtml = ref();
+
+const markdownHtml = ref("");
 const hasValidTextContent = ref(true);
 
 onMounted(() => loadMarkdownFile());
 
 async function loadMarkdownFile() {
   try {
-    const response = await fetch("../src/assets/cmscontent/index.md");
+    const response = await fetch("/assets/cmscontent/index.md");
     if (response.ok) {
       const markdownText = await response.text();
-      hasValidTextContent.value = !markdownText.includes("!doctype");
-      if (hasValidTextContent.value) markdownHtml.value = marked(markdownText);
+      hasValidTextContent.value = !markdownText.toLowerCase().includes("!doctype");
+      if (hasValidTextContent.value) {
+        markdownHtml.value = marked(markdownText);
+      }
+    } else {
+      hasValidTextContent.value = false;
+      console.error("Failed to fetch markdown file:", response.status);
     }
   } catch (error) {
-    console.error(error);
+    hasValidTextContent.value = false;
+    console.error("Error loading markdown file:", error);
   }
 }
 </script>
 
 <template>
   <div v-if="!hasValidTextContent">Loading.....</div>
-  <div v-else v-html="markdownHtml" />
+  <div v-else v-html="markdownHtml"></div>
 </template>
 
 <style scoped>
