@@ -9,7 +9,7 @@ collections:
   - name: "index"
     label: "Home Page Content"
     files:
-      - file: "src/assets/cmscontent/index.md"
+      - file: "cmscontent/index.md"
         label: "Index Markdown"
         name: "index"
         fields:
